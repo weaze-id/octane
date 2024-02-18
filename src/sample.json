@@ -1,0 +1,71 @@
+[
+  {
+    "path": "/",
+    "loaders": [
+      {
+        "name": "posts",
+        "url": "https://jsonplaceholder.typicode.com/posts/1"
+      }
+    ],
+    "components": [
+      {
+        "name": "text",
+        "properties": [
+          {
+            "name": "text",
+            "value": "{fromData:posts:title}"
+          },
+          {
+            "name": "variant",
+            "value": "h1"
+          }
+        ]
+      },
+      {
+        "name": "grid",
+        "components": [
+          {
+            "name": "grid-item",
+            "properties": [
+              {
+                "name": "xs",
+                "value": "6"
+              }
+            ],
+            "components": [
+              {
+                "name": "text",
+                "properties": [
+                  {
+                    "name": "text",
+                    "value": "{fromData:posts:body}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "grid-item",
+            "properties": [
+              {
+                "name": "xs",
+                "value": "6"
+              }
+            ],
+            "components": [
+              {
+                "name": "text",
+                "properties": [
+                  {
+                    "name": "text",
+                    "value": "{fromData:posts:body}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
