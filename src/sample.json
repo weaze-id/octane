@@ -1,64 +1,84 @@
 [
   {
     "path": "/",
-    "loaders": [
-      {
-        "name": "posts",
-        "url": "https://jsonplaceholder.typicode.com/posts/1"
-      }
-    ],
+    "loaders": [{ "name": "users", "url": "https://jsonplaceholder.typicode.com/users/1" }],
     "components": [
       {
         "name": "text",
         "properties": [
           {
             "name": "text",
-            "value": "{fromData:posts:title}"
-          },
-          {
-            "name": "variant",
-            "value": "h1"
+            "value": "{fromData:users:name}"
           }
         ]
       },
       {
-        "name": "grid",
+        "name": "outlet"
+      }
+    ],
+    "children": [
+      {
+        "path": "/:postId",
+        "loaders": [
+          {
+            "name": "posts",
+            "url": "https://jsonplaceholder.typicode.com/posts/:postId"
+          }
+        ],
         "components": [
           {
-            "name": "grid-item",
+            "name": "text",
             "properties": [
               {
-                "name": "xs",
-                "value": "6"
-              }
-            ],
-            "components": [
-              {
                 "name": "text",
-                "properties": [
-                  {
-                    "name": "text",
-                    "value": "{fromData:posts:body}"
-                  }
-                ]
+                "value": "{fromData:posts:title}"
+              },
+              {
+                "name": "variant",
+                "value": "h1"
               }
             ]
           },
           {
-            "name": "grid-item",
-            "properties": [
-              {
-                "name": "xs",
-                "value": "6"
-              }
-            ],
+            "name": "grid",
             "components": [
               {
-                "name": "text",
+                "name": "grid-item",
                 "properties": [
                   {
+                    "name": "xs",
+                    "value": "6"
+                  }
+                ],
+                "components": [
+                  {
                     "name": "text",
-                    "value": "{fromData:posts:body}"
+                    "properties": [
+                      {
+                        "name": "text",
+                        "value": "{fromData:posts:body}"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "grid-item",
+                "properties": [
+                  {
+                    "name": "xs",
+                    "value": "6"
+                  }
+                ],
+                "components": [
+                  {
+                    "name": "text",
+                    "properties": [
+                      {
+                        "name": "text",
+                        "value": "{fromData:posts:body}"
+                      }
+                    ]
                   }
                 ]
               }

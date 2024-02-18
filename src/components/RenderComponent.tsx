@@ -1,6 +1,7 @@
 import { Component } from "../models/component";
 import { RenderGrid } from "./RenderGrid";
 import { RenderGridItem } from "./RenderGridItem";
+import { RenderOutlet } from "./RenderOutlet";
 import { RenderText } from "./RenderText";
 
 export function RenderComponent({ component }: { component: Component }) {
@@ -13,6 +14,9 @@ export function RenderComponent({ component }: { component: Component }) {
 
     case "grid-item":
       return <RenderGridItem component={component} />;
+
+    case "outlet":
+      return <RenderOutlet />;
 
     default:
       return <></>;
